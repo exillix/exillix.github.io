@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://jipai.176wgame.com/help -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    
+    <title>帮助</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            user-select: none;
+            -webkit-touch-callout: none;
+            background: #f5f5f5;
+            color: #0B0B0B;
+            margin: 0px;
+        }
+
+        h4 {
+            padding: 5px;
+            background: #00CD66;
+        }
+    
+        ul {
+            margin-right: 10px;
+        }
+    </style>
+
+    <div>
+
+        <h4>注意事项</h4>
+        <ul>
+            <li>游戏开始后请不要跳出对局界面，不要在对局中聊天，这些行为会干扰快记牌APP识别造成误记漏记问题</li>
+            <li>请尽量放慢出牌速度，确保出现识别结果后再出牌</li>
+            <li>请使用游戏原始背景（装扮），关闭游戏特效</li>
+            <li>底牌亮明前请勿选中牌型（扑克会升高影响记牌）</li>
+            <li>使用前将手机设置为正常色调，关闭护眼模式</li>
+        </ul>
+
+        <h4>启动快记牌APP</h4>
+        <ul>
+            <li>输入手机号获取验证码登录软件</li>
+            <li>点击<label style="color: #00CD66">【主页】</label>按钮进入首页</li>
+            <li>选择扑克玩法，横屏游戏无需选择屏幕方向。然后点击右侧<label style="color: #00CD66">【启动】</label>按钮</li>
+            <li>根据提示点击<label style="color: #00CD66">【开始直播】</label></li>
+            <li>快记牌APP启动成功后，在手机左上角将出现快记牌APP悬浮窗，请确保快记牌APP在牌局开始前启动快记牌APP，否则将出现不记牌或记牌出错的现象</li>
+        </ul>
+
+        <h4>常见问题</h4>
+        <ul>
+            <li>为什么会识别错误？</li>
+            <p>本软件利用图像文字识别技术实现扑克牌识别和统计，但是算法并不完美不能很好的处理类似语音、表情、飞机、炸弹等等带有特效的情况，也无法处理系统通知等特殊情况。另外快记牌APP并不依赖于游戏的运行，无论在任何界面，只要手机屏幕上出现了类似扑克的文字，就有可能被快记牌APP统计到，因此错误是完全无法避免的。
+            </p>
+
+            <li>快记牌APP是否属于外挂？</li>
+            <p>
+                郑重声明：本应用不是外挂软件，仅通过识别手机屏幕上的文字进行统计，是一款通用扑克文字识软件，在任何的形式和程度上，没有设计破译或修改游戏源代码、游戏客户端、游戏数据封包、游戏内存，和外挂软件在技术原理上有着本质区别，我们不会在游戏内进行自动点击操作游戏，也不会干扰游戏客户端和服务器的正常运作。用户使用纸和笔也可以实现快记牌APP的功能，记忆好的话完全不需要。本应用永不保证统计结果完全准确，如您需要准确的统计结果，请使用笔和纸进行统计，或使用游戏内置的记牌功能。<label style="color: red">本应用的统计结果仅供参考，请勿过分依赖本应用，由于参考统计结果或违反应用或游戏协议与相关规定对您造成的一切损失本应用概不负责。</label></p>
+
+            <li>如何禁用快记牌APP？</li>
+            <p>
+                若您作为游戏方，不希望快记牌APP能够识别贵方游戏扑克，可考虑采用一下方案：
+            </p><ul>
+                <li>
+                    禁用录屏功能
+                    <ol>
+                        <li>通过<label style="color: #00CD66">capturedDidChangeNotification</label>监听系统录屏功能是否开启，提示用户关闭录屏后才允许进入游戏；
+                        </li>
+                        <li>通过Bundle ID检查是否安装快记牌APP软件，提示用户卸载后才允许进入游戏。供需检测1个Bundle ID : <label style="color: #00CD66">fan.z6.counter</label>；
+                        </li>
+                        <li>通过Scheme检查是否能启动快记牌APP软件，提示用户卸载后才允许进入游戏。可启动快记牌APP软件的Scheme为 : <label style="color: #00CD66">QuickCounter://</label>
+                        </li>
+                    </ol>
+                </li>
+
+                <li>采用复杂的文字扑克样式，增加文字识别难度；</li>
+                <li>其他情况请与我们取得联系。</li>
+            </ul>
+        </ul>
+
+        <h4>支持设备</h4>
+        <ul>
+            支持iOS14.0及以上系统iPhone，iPad设备。出现记牌错误情况，请"带图"向客服咨询。
+        </ul>
+
+        <h4>如需帮助请咨询客服 <label>&gt;</label> </h4>
+
+    </div>
+
+
+
+</body></html>
