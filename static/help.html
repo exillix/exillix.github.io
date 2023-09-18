@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)http://jipai.176wgame.com/help -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    
-    <title>帮助</title>
+    <title>Help</title>
 </head>
 
 <body>
@@ -12,81 +13,775 @@
         body {
             user-select: none;
             -webkit-touch-callout: none;
-            background: #f5f5f5;
-            color: #0B0B0B;
-            margin: 0px;
         }
 
-        h4 {
-            padding: 5px;
-            background: #00CD66;
-        }
-    
-        ul {
-            margin-right: 10px;
+        .content {
+            margin: 30px;
         }
     </style>
 
-    <div>
+    <div class="content">
 
-        <h4>注意事项</h4>
+        <h1>WebSite Rule Help</h1>
+
+        <p><strong>SiteRule&nbsp;</strong>has three main components: <strong>Site</strong>, <strong>Rule</strong>, and
+            <strong>Selector</strong>. The relationship between the three is contained layer by layer, that is, Site
+            contains multiple Rule, and Rule contains a variety of Selector.</p>
+
+
+
+        <p>The first thing we need to understand is the Selector, through which we can locate and find the data we need.
+            The Rule is a collection that contains various Selectors. Different Selectors can get different data. The
+            final combination of each Rule is a Site!</p>
+
+
+
+        <p>Well, now let’s start learning the grammar rules of SiteRule.<br>
+        </p>
+
+
+
+        <h2 class="wp-block-heading has-text-align-center" id="selector">Selector</h2>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>The Selector is the most important part of the entire SiteRule, because the behavior of the Selector
+            definition is to tell Exillix how to get the specified data. The prerequisite for being able to use Selector
+            proficiently is that you should understand <a rel="noopener noreferrer"
+                href="https://www.w3schools.com/html/" target="_blank">HTML</a>, <a rel="noopener noreferrer"
+                href="https://www.w3schools.com/css/" target="_blank">CSS</a>, <a
+                href="https://goessner.net/articles/JsonPath/" target="_blank" rel="noreferrer noopener">JSONPath</a>,
+            and <a rel="noopener noreferrer" href="https://www.w3schools.com/js/js_regexp.asp" target="_blank">Regular
+                Expression</a>.</p>
+
+
+
+        <p>Selector contains 5 parameters: <strong>selector</strong>, <strong>function</strong>, <strong>param</strong>,
+            <strong>regex</strong>, <strong>replacement</strong>.</p>
+
+
+
+        <h4 class="wp-block-heading" id="selector">selector</h4>
+
+
+
+        <p>CSS3 grammar-adaptive selectors that can select specific HTML tags (hereinafter “elements”) .</p>
+
+
+
+        <p>JSONPath is supported since version 5.4.1.</p>
+
+
+
+        <p>Special syntax – <strong>this</strong>, represents the currently selected element (hereinafter referred to as
+            “current element”).</p>
+
+
+
+        <h4 class="wp-block-heading" id="function">function</h4>
+
+
+
+        <p>The method that will be executed on the current element. Function supports the following values:</p>
+
+
+
         <ul>
-            <li>游戏开始后请不要跳出对局界面，不要在对局中聊天，这些行为会干扰快记牌APP识别造成误记漏记问题</li>
-            <li>请尽量放慢出牌速度，确保出现识别结果后再出牌</li>
-            <li>请使用游戏原始背景（装扮），关闭游戏特效</li>
-            <li>底牌亮明前请勿选中牌型（扑克会升高影响记牌）</li>
-            <li>使用前将手机设置为正常色调，关闭护眼模式</li>
+            <li><strong>html</strong>: Get all the HTML strings inside the current element;</li>
+
+
+
+            <li><strong>text</strong>: Get all the pure strings (remove all HTML tags) inside the current elements;</li>
+
+
+
+            <li><strong>attr</strong>: Will get the current element’s attribute value. Which attribute value is
+                specifically obtained must be determined by setting the param parameter;</li>
+
+
+
+            <li>Blank charactor or nil: Get all HTML strings that contain the current element itself.</li>
         </ul>
 
-        <h4>启动快记牌APP</h4>
-        <ul>
-            <li>输入手机号获取验证码登录软件</li>
-            <li>点击<label style="color: #00CD66">【主页】</label>按钮进入首页</li>
-            <li>选择扑克玩法，横屏游戏无需选择屏幕方向。然后点击右侧<label style="color: #00CD66">【启动】</label>按钮</li>
-            <li>根据提示点击<label style="color: #00CD66">【开始直播】</label></li>
-            <li>快记牌APP启动成功后，在手机左上角将出现快记牌APP悬浮窗，请确保快记牌APP在牌局开始前启动快记牌APP，否则将出现不记牌或记牌出错的现象</li>
-        </ul>
 
-        <h4>常见问题</h4>
-        <ul>
-            <li>为什么会识别错误？</li>
-            <p>本软件利用图像文字识别技术实现扑克牌识别和统计，但是算法并不完美不能很好的处理类似语音、表情、飞机、炸弹等等带有特效的情况，也无法处理系统通知等特殊情况。另外快记牌APP并不依赖于游戏的运行，无论在任何界面，只要手机屏幕上出现了类似扑克的文字，就有可能被快记牌APP统计到，因此错误是完全无法避免的。
-            </p>
 
-            <li>快记牌APP是否属于外挂？</li>
-            <p>
-                郑重声明：本应用不是外挂软件，仅通过识别手机屏幕上的文字进行统计，是一款通用扑克文字识软件，在任何的形式和程度上，没有设计破译或修改游戏源代码、游戏客户端、游戏数据封包、游戏内存，和外挂软件在技术原理上有着本质区别，我们不会在游戏内进行自动点击操作游戏，也不会干扰游戏客户端和服务器的正常运作。用户使用纸和笔也可以实现快记牌APP的功能，记忆好的话完全不需要。本应用永不保证统计结果完全准确，如您需要准确的统计结果，请使用笔和纸进行统计，或使用游戏内置的记牌功能。<label style="color: red">本应用的统计结果仅供参考，请勿过分依赖本应用，由于参考统计结果或违反应用或游戏协议与相关规定对您造成的一切损失本应用概不负责。</label></p>
+        <p>Support multiple functions, separated by commas.</p>
 
-            <li>如何禁用快记牌APP？</li>
-            <p>
-                若您作为游戏方，不希望快记牌APP能够识别贵方游戏扑克，可考虑采用一下方案：
-            </p><ul>
-                <li>
-                    禁用录屏功能
-                    <ol>
-                        <li>通过<label style="color: #00CD66">capturedDidChangeNotification</label>监听系统录屏功能是否开启，提示用户关闭录屏后才允许进入游戏；
-                        </li>
-                        <li>通过Bundle ID检查是否安装快记牌APP软件，提示用户卸载后才允许进入游戏。供需检测1个Bundle ID : <label style="color: #00CD66">fan.z6.counter</label>；
-                        </li>
-                        <li>通过Scheme检查是否能启动快记牌APP软件，提示用户卸载后才允许进入游戏。可启动快记牌APP软件的Scheme为 : <label style="color: #00CD66">QuickCounter://</label>
-                        </li>
-                    </ol>
-                </li>
 
-                <li>采用复杂的文字扑克样式，增加文字识别难度；</li>
-                <li>其他情况请与我们取得联系。</li>
-            </ul>
-        </ul>
 
-        <h4>支持设备</h4>
-        <ul>
-            支持iOS14.0及以上系统iPhone，iPad设备。出现记牌错误情况，请"带图"向客服咨询。
-        </ul>
+        <h4 class="wp-block-heading" id="param">param</h4>
 
-        <h4>如需帮助请咨询客服 <label>&gt;</label> </h4>
+
+
+        <p>When the selector’s function is set to “attr”, param specifies the name of the property that will get the
+            property value.</p>
+
+
+
+        <p>Support multiple attributes, separated by commas.</p>
+
+
+
+        <h4 class="wp-block-heading" id="regex">regex</h4>
+
+
+
+        <p>Is a regular expression used on the string obtained by the above selector, containing at least one Group. The
+            matched values ​​are represented using the placeholders <strong>$1</strong>, <strong>$2</strong>,
+            <strong>$3</strong>… Placeholders can be used in replacement.</p>
+
+
+
+        <h4 class="wp-block-heading" id="replacement">replacement</h4>
+
+
+
+        <p>The prerequisite for using replacement is that the regex parameter has been set. Using replacement alone has
+            no effect.</p>
+
+
+
+        <p>When replacement is empty, the default is a <strong>$1</strong> placeholder, which is the first Group value
+            matched using regex.</p>
+
+
+
+        <p> If nothing matches and you want to use the original string, you can use the <strong>|{source:}</strong>
+            placeholder. </p>
+
+
+
+        <p>By using the placeholders ​​that the regex matches, you can combine the final string results you want. Of
+            course, it can also be a mathematical expression, which is generally used to obtain a Rating.<br>
+        </p>
+
+
+
+        <h2 class="wp-block-heading has-text-align-center" id="rule">Rule</h2>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>Rule is a collection of various Selectors, different Selector can get different data. Rule is further
+            subdivided into three types of specific pages: <strong>ListRule</strong>,<strong>DetailRule</strong>,<strong>GalleryRule</strong>.</p>
+
+
+
+        <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+        <h3 class="wp-block-heading has-text-align-center" id="listrule">ListRule</h3>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>ListRule is mainly applied to list pages such as a general list page, a tag link page, and a search page.</p>
+
+
+
+        <p>ListRule contains the following Selectors:</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Select each item in the list and the result obtained should be a collection containing multiple items of the
+            same type.</p>
+
+
+
+        <p>For example, the website’s latest article page is generally a list page, and this page will list the latest
+            articles in order of date. The collection we get through the item Selector should be a collection of all the
+            latest articles on this page.</p>
+
+
+
+        <p>After getting the items, how can we get the detailed data contained in each item? For example, the article’s
+            title, author, update time, rating, etc. At this time we need to use the following Selector to get the
+            corresponding data.</p>
+
+
+
+        <p>All of the following Selector’s selections are limited to each item retrieved above.</p>
+
+
+
+        <h4 class="wp-block-heading" id="idcode">idCode</h4>
+
+
+
+        <p>The unique identifier of the item. idCode replaces the {idCode:} placeholder in the URL pattern.</p>
+
+
+
+        <h4 class="wp-block-heading" id="title">title</h4>
+
+
+
+        <p>The title of the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="cover">cover</h4>
+
+
+
+        <p>The cover image url of the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="coverwidth">coverWidth</h4>
+
+
+
+        <p>Width of the cover image of the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="coverheight">coverHeight</h4>
+
+
+
+        <p>Height of the cover image of the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="largeimage">largeImage</h4>
+
+
+
+        <p>The large image url of&nbsp;the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="category">category</h4>
+
+
+
+        <p>The category of&nbsp;the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="author">author</h4>
+
+
+
+        <p>The author of&nbsp;the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="uploader">uploader</h4>
+
+
+
+        <p>The uploader of&nbsp;the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="published">published</h4>
+
+
+
+        <p>The time when the item was released.</p>
+
+
+
+        <h4 class="wp-block-heading" id="datetime">datetime</h4>
+
+
+
+        <p>The time of the item, generally refers to the update time.</p>
+
+
+
+        <h4 class="wp-block-heading" id="rating">rating</h4>
+
+
+
+        <p>The rating of the item.</p>
+
+
+
+        <h4 class="wp-block-heading" id="totalimages">totalImages </h4>
+
+
+
+        <p>The total number of images.</p>
+
+
+
+        <p>When this parameter is set and the pictureRule’s url in DetailRule container the paging placeholder, {page:},
+            Exillix will automatically get the url of all the big images according to the paging rule.</p>
+
+
+
+        <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+        <h3 class="wp-block-heading has-text-align-center" id="detailrule">DetailRule</h3>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>DetailRule is mainly used for detailed pages. Generally, it refers to the linked page after clicking item in
+            the ListRule. The definitions of Selector: title, cover, category, author, uploader, published, datetime,
+            and rating are the same as described in ListRule.</p>
+
+
+
+        <p>In addition, DetailRule also contains several mini-rules, including:
+            <strong>tagRule</strong>,&nbsp;<strong>pictureRule</strong>,&nbsp;<strong>chapterRule,</strong>&nbsp;and
+            <strong>commentRule</strong>.</p>
+
+
+
+        <h4 class="wp-block-heading" id="totalimages">totalImages </h4>
+
+
+
+        <p><strong></strong>The total number of images in the detail page.</p>
+
+
+
+        <p>When this parameter is set and the pictureRule’s url container the paging placeholder, {page:}, Exillix will
+            automatically get the url of all the big images according to the paging rule.</p>
+
+
+
+        <h4 class="wp-block-heading" id="photoalbumlink-second-level-page">photoAlbumLink (Second Level Page)</h4>
+
+
+
+        <p>Some sites’ albums, chapters or videos are not on the detailed page, you need to click on the link of the
+            second level page to get the details of the album, the chapters or the videos.</p>
+
+
+
+        <p>When you set the photoAlbumLink (Second Level Page), pictureRule will act on the link page corresponding to
+            photoAlbumLink (Second Level Page). ChapterRule and VideoRule will be the same.</p>
+
+
+
+        <h3 class="wp-block-heading" id="tagrule">tagRule</h3>
+
+
+
+        <p>Get all tag data in the detail page.</p>
+
+
+
+        <p>tagRule contains the following Selector:</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Get a collection containing all the tags.</p>
+
+
+
+        <p>All of the following Selector selections are limited to each item retrieved.</p>
+
+
+
+        <h4 class="wp-block-heading" id="name">name</h4>
+
+
+
+        <p>The name of the tag.</p>
+
+
+
+        <h4 class="wp-block-heading" id="url">url</h4>
+
+
+
+        <p>The page link of the tag.</p>
+
+
+
+        <h3 class="wp-block-heading" id="picturerule">pictureRule</h3>
+
+
+
+        <p>Get all image data in the detail page.</p>
+
+
+
+        <p>pictureRule contains the following Selectors:</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Get a collection containing all the pictures.</p>
+
+
+
+        <p>All of the following Selector selections are limited to each item retrieved.</p>
+
+
+
+        <h4 class="wp-block-heading" id="thumbnail">thumbnail</h4>
+
+
+
+        <p>Thumbnail of the picture.</p>
+
+
+
+        <h4 class="wp-block-heading" id="url">url</h4>
+
+
+
+        <p>The big picture url of the picture. When a link selector is defined, this url selector will be executed on
+            the page pointed to by the link.</p>
+
+
+
+        <h4 class="wp-block-heading" id="link">link</h4>
+
+
+
+        <p>Get the page link for getting the big picture url.</p>
+
+
+
+        <h3 class="wp-block-heading" id="videorule">videoRule</h3>
+
+
+
+        <p>Same as pictureRule.</p>
+
+
+
+        <h3 class="wp-block-heading" id="chaperterrule">chaperterRule</h3>
+
+
+
+        <p>Get all chapter data in the detail page.</p>
+
+
+
+        <p>The chapterRule contains the following Selectors:</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Gets a collection containing all chapters.</p>
+
+
+
+        <p>All of the following Selector selections are limited to each item retrieved.</p>
+
+
+
+        <h4 class="wp-block-heading" id="idcode">idCode</h4>
+
+
+
+        <p>The unique identifier of the chapter. The section’s idCode must be distinguished from the ListRule’s idCode.
+            The chapter’s idCode replaces the {cidCode:} placeholder in the URL pattern.</p>
+
+
+
+        <p>This ID Code is required for bookmark records.</p>
+
+
+
+        <h4 class="wp-block-heading" id="title">title</h4>
+
+
+
+        <p>The title of the chapter.</p>
+
+
+
+        <h4 class="wp-block-heading" id="datetime">datetime</h4>
+
+
+
+        <p>The date time of the chapter.</p>
+
+
+
+        <h4 class="wp-block-heading" id="url">url</h4>
+
+
+
+        <p>The page link which the chapter point to.</p>
+
+
+
+        <h3 class="wp-block-heading" id="commentrule">commentRule</h3>
+
+
+
+        <p>Get all comment data in the detail page.</p>
+
+
+
+        <p>The commentRule contains the following Selectors:</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Get a collection containing all comments.</p>
+
+
+
+        <p>All of the following Selector selections are limited to each item retrieved.</p>
+
+
+
+        <h4 class="wp-block-heading" id="avatar">avatar</h4>
+
+
+
+        <p>The avatar image of the user.</p>
+
+
+
+        <h4 class="wp-block-heading" id="username">username</h4>
+
+
+
+        <p>The user name of the comment.</p>
+
+
+
+        <h4 class="wp-block-heading" id="datetime">datetime</h4>
+
+
+
+        <p>The date time of the comment.</p>
+
+
+
+        <h4 class="wp-block-heading" id="content">content</h4>
+
+
+
+        <p>The content of the comment.<br>
+        </p>
+
+
+
+        <div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+        <h3 class="wp-block-heading has-text-align-center" id="galleryrule">GalleryRule</h3>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>GalleryRule is mainly used for picture browsing pages.</p>
+
+
+
+        <p>The GalleryRule contains the following Selectors:</p>
+
+
+
+        <h4 class="wp-block-heading" id="totalpages">totalPages</h4>
+
+
+
+        <p>The total number of pages on the picture browsing page.</p>
+
+
+
+        <h4 class="wp-block-heading" id="item">item</h4>
+
+
+
+        <p>Get a collection of all picture data for the current page.</p>
+
+
+
+        <h4 class="wp-block-heading" id="image">image</h4>
+
+
+
+        <p>The url of the item.</p>
+
+
+
+        <h3 class="wp-block-heading" id="videorule">videoRule</h3>
+
+
+
+        <p>Same as pictureRule.</p>
+
+
+
+        <p><br> </p>
+
+
+
+        <h2 class="wp-block-heading has-text-align-center" id="site">Site</h2>
+
+
+
+        <hr class="wp-block-separator has-css-opacity is-style-wide">
+
+
+
+        <p>Site, as the outermost layer of the entire site rules, contains the basic settings of the site, page
+            settings, default URL patterns for various pages, and page rules.</p>
+
+
+
+        <p>Site contains the following parameters:</p>
+
+
+
+        <h4 class="wp-block-heading" id="name">name</h4>
+
+
+
+        <p>The name of the site.</p>
+
+
+
+        <h4 class="wp-block-heading" id="displaymode">displayMode</h4>
+
+
+
+        <p>The default display mode of the list page, support: <strong>text</strong>, <strong>table</strong>,
+            <strong>collection</strong>. Waterfall needs to get the width and
+            height of the picture in the ListRule, otherwise it automatically switches back to the collection display
+            mode.</p>
+
+
+        <h4 class="wp-block-heading" id="indexurl-detailurl-galleryurl-searchurl">indexUrl, detailUrl, galleryUrl,
+            searchUrl</h4>
+
+
+
+        <p>These are the link URL pattern for the list page, detail page, picture browsing page, and search page. The
+            link URL pattern for these pages can contain the following types of placeholders:</p>
+
+
+
+        <p><strong>{page: </strong>start page number<strong>: </strong>increment page number<strong>}</strong></p>
+
+
+
+        <p>Paging placeholders. For example, {page:1:1} indicates that the paging start page number is 1, and each
+            paging page is incremented by 1. If every increment page number is 1, it can be shortened to {page:1}.</p>
+
+
+
+        <p>If the first page does not require paging information, use the following placeholders:</p>
+
+
+
+        <p><strong>{pageFormat:{page: </strong>start page number<strong>: </strong>increment page
+            number<strong>}}</strong></p>
+
+
+
+        <h4 class="wp-block-heading" id="idcode">{idCode:}</h4>
+
+
+
+        <p>Represents the unique identifier of the item in the ListRule. Mainly used in detailUrl.</p>
+
+
+
+        <h4 class="wp-block-heading" id="keyword">{keyword:}</h4>
+
+
+
+        <p>Keywords placeholders for search pages. When the user searches, the entered keyword will first replace this
+            placeholder and then initiate a search request to the server.</p>
+
+
+        <h3 class="wp-block-heading" id="indexrule">indexRule</h3>
+
+
+
+        <p>The default list page rule. It’s a ListRule.</p>
+
+
+
+        <h3 class="wp-block-heading" id="detailrule">detailRule</h3>
+
+
+
+        <p>The default detail page rule. It’s a DetailRule.</p>
+
+
+
+        <h3 class="wp-block-heading" id="galleryrule">galleryRule</h3>
+
+
+
+        <p>The default picture browsing page rule. It’s a GalleryRule.</p>
+
+
+
+        <h3 class="wp-block-heading" id="pages">pages</h3>
+
+
+
+        <p>Sites can set up multiple pages. Each page can also be customized for its own <strong>displayMode</strong>,
+            <strong>flags, indexUrl</strong>, <strong>detailUrl</strong>, <strong>galleryUrl</strong>,
+            <strong>listRule</strong>, <strong>detailRule</strong> and <strong>galleryRule</strong>.</p>
+
+
+
+        <p>When you need to set the associated <strong>ListRule </strong>for the current page, you need to set
+            <strong>relListRuleIndex </strong>to the index of the corresponding <strong>ListRule</strong>.</p>
+
+
+
+        <p>Similarly, you can set the <strong>detailRule </strong>and the <strong>galleryRule</strong>.</p>
+
+
+        <h3 class="wp-block-heading" id="listrules-detailrules-galleryrules">listRules,detailRules,galleryRules</h3>
+
+
+
+        <p>Provide additional <strong>listRule</strong>, <strong>detailRule </strong>and
+            <strong>galleryRule </strong>to facilitate different Pages.</p>
+
 
     </div>
 
 
+</body>
 
-</body></html>
+</html>
